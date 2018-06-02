@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // 默认第一条为编译命令
+            "label": "build",
+            // 使用 g++ 编译
+            "command": "clang++",
+            // 参数包含所有使用到的源文件
+            "args": [
+                "lab3/main.cpp", //改文件名
+                "-o",
+                "lab3/main.exe",
+                "--target=x86_64-w64-mingw"//不能动
+            ],
+            // 默认在 shell 中执行编译命令
+            "type": "shell"
+        },
+        {
+            // 编译 debug 用的目标文件
+            "label": "build-debug",
+            "command": "clang++",
+            // -g 参数用于编译可 debug 的目标文件
+            "args": [
+                "-g",
+                "lab3/main.cpp",  //改文件名
+                "-o",
+                "debug.exe",
+                "--target=x86_64-w64-mingw"
+            ],
+            "type": "shell"
+        }
+    ]
+}
